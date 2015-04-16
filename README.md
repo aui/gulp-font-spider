@@ -47,6 +47,10 @@ silent | Boolean | false | 不显示非关键错误
 
 来源：<http://caniuse.com/#feat=fontface>
 
+## 贡献者
+
+*  [@chenmnkken](https://github.com/chenmnkken)
+
 =============
 
 *字体受版权保护，若在网页中使用商业字体，请联系相关字体厂商购买授权*
