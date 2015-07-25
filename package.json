@@ -1,6 +1,6 @@
 {
   "name": "gulp-font-spider",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Font-spider for gulp",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
   },
   "homepage": "https://github.com/chenmnkken/gulp-font-spider",
   "dependencies": {
-    "font-spider": "^0.2.0-beta2",
+    "font-spider": ">=0.3.0",
     "through2": "^0.6.5"
   }
 }
