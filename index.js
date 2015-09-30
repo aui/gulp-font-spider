@@ -10,7 +10,7 @@ var createStream = function( options ){
         var fontSpider;
 
         if( file.isBuffer() ){
-            fontSpider = new FontSpider( file, options );
+            fontSpider = new FontSpider( file.path, options );
 
             fontSpider.then(function(){
                 callback( null, file );
