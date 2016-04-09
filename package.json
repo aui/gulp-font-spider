@@ -21,6 +21,7 @@
   "homepage": "https://github.com/chenmnkken/gulp-font-spider",
   "dependencies": {
     "font-spider": "^1.0.0-pre",
+    "gutil": "^1.6.4",
     "through2": "^0.6.5"
   },
   "devDependencies": {
