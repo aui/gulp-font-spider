@@ -1,10 +1,13 @@
 {
   "name": "gulp-font-spider",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "Font-spider for gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "_remove": "rm -rf release",
+    "_copy": "mkdir release && cp -R test/* release",
+    "demo": "npm run _remove && npm run _copy && gulp",
+    "test": "npm run demo"
   },
   "repository": {
     "type": "git",
@@ -17,7 +20,10 @@
   },
   "homepage": "https://github.com/chenmnkken/gulp-font-spider",
   "dependencies": {
-    "font-spider": ">=0.3.0",
+    "font-spider": "^1.0.0-pre",
     "through2": "^0.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
