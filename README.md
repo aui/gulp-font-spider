@@ -2,7 +2,7 @@
 
 中文 WebFont 自动化压缩工具，它能自动分析页面使用的 WebFont 并进行按需压缩。
 
-官方网站：<http://font-spider.org>
+更多请查看字蛛的主页：<http://font-spider.org>
 
 ## 特性
 
@@ -21,15 +21,15 @@ npm install gulp-font-spider --save-dev
 ## 使用
 
 ```
-var gulp = require( 'gulp' ),
-	fontSpider = require( 'gulp-font-spider' );
+var gulp = require( 'gulp' );
+var fontSpider = require( 'gulp-font-spider' );
 	
-gulp.task( 'fontspider', function(){
-	return gulp.src( './index.html' )
-		.pipe( fontSpider() );
+gulp.task('fontspider', function() {
+	return gulp.src('./index.html')
+		.pipe(fontSpider());
 });
 
-gulp.task( 'defualt', ['fontspider'] );
+gulp.task('defualt', ['fontspider']);
 ```
 
 ## API 
@@ -41,7 +41,7 @@ gulp.task( 'defualt', ['fontspider'] );
 名称 | 类型 | 默认值 | 说明
 ---- | ---- | ---- | -----
 map | Array | [] | 映射 CSS 内部 HTTP 路径到本地。示例：[['http://demo.io/css', __dirname + '/css']]
-ignore | Array | [] | 忽略的文件配置（可以是字体、CSS、HTML）。示例：['icons.ttf', '*.bk.css']
+ignore | Array | [] | 忽略的文件配置（可以是字体、CSS 等外部文件）。示例：['icons.ttf', '*.bk.css']
 backup | Boolean | true | 是否备份字体
 silent | Boolean | false | 不显示非关键错误
 
@@ -66,6 +66,7 @@ silent | Boolean | false | 不显示非关键错误
 ## 贡献者
 
 *  [@chenmnkken](https://github.com/chenmnkken)
+*  [@aui](https://github.com/aui)
 
 =============
 
