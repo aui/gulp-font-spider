@@ -18,7 +18,7 @@
   "homepage": "https://github.com/aui/gulp-font-spider",
   "dependencies": {
     "colors": "^1.1.2",
-    "font-spider": "^1.0.0-pre",
+    "font-spider": "^1.0.0-beta",
     "gutil": "^1.6.4",
     "through2": "^0.6.5"
   },
