@@ -4,10 +4,7 @@
   "description": "Font-spider for gulp",
   "main": "index.js",
   "scripts": {
-    "_remove": "rm -rf release",
-    "_copy": "mkdir release && cp -R test/* release",
-    "demo": "npm run _remove && npm run _copy && gulp",
-    "test": "npm run demo"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
@@ -20,6 +17,7 @@
   },
   "homepage": "https://github.com/aui/gulp-font-spider",
   "dependencies": {
+    "colors": "^1.1.2",
     "font-spider": "^1.0.0-pre",
     "gutil": "^1.6.4",
     "through2": "^0.6.5"
