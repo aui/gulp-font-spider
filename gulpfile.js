@@ -3,8 +3,9 @@ var gulp = require('gulp');
 var fontSpider = require('./');
 
 gulp.task('fontSpider', function() {
-    return gulp.src('./release/index.html')
+    return gulp.src('./release/*.html')
         .pipe(fontSpider({
+            silent: false,
             backup: false,
             ignore: ['*.woff2']
         }));
