@@ -1,29 +1,27 @@
 'use strict';
 
 var fontSpider = require('font-spider');
-
+var colors = require('colors/safe');
 var through = require('through2');
 var gutil = require('gutil');
-var util = require('util');
-
+var fs = require('fs');
+var path = require('path');
 var htmlFiles = null;
 
 function createStream(options) {
 
     function bufferContents(file, enc, callback) {
 
-        // ignore empty files
         if (file.isNull()) {
             callback(null);
             return;
         }
 
         if (file.isBuffer && file.isBuffer()) {
-
             if (!htmlFiles) {
                 htmlFiles = [];
             }
-            htmlFiles.push(file.path);
+            htmlFiles.push(file);
             callback(null, file);
 
         } else {
@@ -42,12 +40,23 @@ function createStream(options) {
 
         fontSpider(htmlFiles, options).then(function(webFonts) {
 
-            webFonts = JSON.stringify(webFonts, null, 4);
-            webFonts = JSON.parse(webFonts);
-            gutil.log(util.inspect(webFonts, {
-                colors: true,
-                depth: null
-            }));
+            webFonts.forEach(function(webFont) {
+
+                gutil.log('Font family', colors.green(webFont.family));
+                gutil.log('Original size', colors.green(webFont.originalSize / 1000 + ' KB'));
+                gutil.log('Include chars', webFont.chars);
+                gutil.log('Font id', webFont.id);
+                gutil.log('CSS selector', webFont.selectors.join(', '));
+
+                webFont.files.forEach(function(file) {
+                    if (fs.existsSync(file.source)) {
+                        gutil.log('File', colors.cyan(path.relative('./', file.source)) + ' created: ' +
+                            colors.green(file.size / 1000 + ' KB'));
+                    } else {
+                        gutil.log(colors.red('File ' + path.relative('./', file.source) + ' not created'));
+                    }
+                });
+            });
 
             callback(null);
 
