@@ -1,23 +1,28 @@
 {
   "name": "gulp-font-spider",
-  "version": "0.2.0",
-  "description": "Font-spider for gulp",
+  "version": "0.3.1",
+  "description": "font-spider for gulp",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "gulp"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/chenmnkken/gulp-font-spider.git"
+    "url": "https://github.com/aui/gulp-font-spider.git"
   },
-  "author": "chenmnkken@gmail.com",
+  "author": "chenmnkken@gmail.com, sugarpie.tang@gmail.com",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/chenmnkken/gulp-font-spider/issues"
+    "url": "https://github.com/aui/gulp-font-spider/issues"
   },
-  "homepage": "https://github.com/chenmnkken/gulp-font-spider",
+  "homepage": "https://github.com/aui/gulp-font-spider",
   "dependencies": {
-    "font-spider": ">=0.3.0",
+    "colors": "^1.1.2",
+    "font-spider": "^1.0.0-beta1",
+    "gutil": "^1.6.4",
     "through2": "^0.6.5"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1"
   }
 }
