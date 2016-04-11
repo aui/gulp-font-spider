@@ -46,7 +46,7 @@ function createStream(options) {
                 gutil.log('Original size', colors.green(webFont.originalSize / 1000 + ' KB'));
                 gutil.log('Include chars', webFont.chars);
                 gutil.log('Font id', webFont.id);
-                gutil.log('CSS selector', webFont.selectors.join(', '));
+                gutil.log('CSS selectors', webFont.selectors.join(', '));
 
                 webFont.files.forEach(function(file) {
                     if (fs.existsSync(file.source)) {
