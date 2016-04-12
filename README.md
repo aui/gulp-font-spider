@@ -98,7 +98,7 @@ gulp.task('defualt', ['fontspider']);
     loadCssFile: true,
 
     /**
-     * 是否忽略内部解析错误-打开它有利于开发调试
+     * 是否忽略内部解析错误-关闭它有利于开发调试
      * @type    {Boolean}
      */
     silent: true,
@@ -159,6 +159,7 @@ gulp.task('defualt', ['fontspider']);
 - 仅支持固定的文本与样式，不支持 javascript 动态插入的元素与样式
 - .otf 字体需要转换成 .ttf 才能被压缩
 - 仅支持 `utf-8` 编码的 HTML 与 CSS 文件
+- CSS `content` 属性只支持普通文本，不支持属性、计数器等特性
 
 ##	字体兼容性参考
 
