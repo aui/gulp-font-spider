@@ -2,7 +2,7 @@
 var gulp = require('gulp');
 var fontSpider = require('./');
 
-gulp.task('fontSpider', function() {
+gulp.task('font', function() {
     return gulp
         .src('test/*.html')
         .pipe(gulp.dest('release'))
@@ -13,4 +13,4 @@ gulp.task('fontSpider', function() {
         }));
 });
 
-gulp.task('default', ['fontSpider']);
+gulp.task('default', ['font']);
