@@ -10,6 +10,15 @@ var htmlFiles = null;
 
 function createStream(options) {
 
+    if (!options.resourceBeforeLoad) {
+        options.resourceBeforeLoad = function(file) {
+            if (/https?/.test(file)) {
+                gutil.log('Load', colors.cyan(file));
+            }
+        };
+    }
+
+
     function bufferContents(file, enc, callback) {
 
         if (file.isNull()) {
@@ -49,11 +58,11 @@ function createStream(options) {
                 gutil.log('CSS selectors', webFont.selectors.join(', '));
 
                 webFont.files.forEach(function(file) {
-                    if (fs.existsSync(file.source)) {
-                        gutil.log('File', colors.cyan(path.relative('./', file.source)) + ' created: ' +
+                    if (fs.existsSync(file.url)) {
+                        gutil.log('File', colors.cyan(path.relative('./', file.url)) + ' created: ' +
                             colors.green(file.size / 1000 + ' KB'));
                     } else {
-                        gutil.log(colors.red('File ' + path.relative('./', file.source) + ' not created'));
+                        gutil.log(colors.red('File ' + path.relative('./', file.url) + ' not created'));
                     }
                 });
             });
