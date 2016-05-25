@@ -10,6 +10,8 @@ var htmlFiles = null;
 
 function createStream(options) {
 
+    options = options || {};
+
     if (!options.resourceBeforeLoad) {
         options.resourceBeforeLoad = function(file) {
             if (/https?/.test(file)) {
